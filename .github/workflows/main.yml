@@ -45,8 +45,8 @@ jobs:
     - name: Install Newman for API testing
       run: npm install -g newman
 
-    # - name: Create Postman collection directory
-    #   run: mkdir -p cypress-tests/postman
+    - name: Create Postman collection directory
+      run: mkdir -p cypress-tests/postman
 
 
 
@@ -76,9 +76,11 @@ jobs:
         timeout 60 bash -c 'until curl -f http://localhost:3000; do sleep 2; done'
         echo "Frontend is ready!"
 
-    - name: run Postman collection
+    - name: Run Postman collection
+      working-directory: cypress-tests
       run: |
         newman run postman/qa-collection.json --reporters cli
+      
 
     - name: Run Cypress Tests
       working-directory: cypress-tests
@@ -101,7 +103,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: failure()
       with:
-        name: cypress-screenshots
+        name: cypress-screenshots-${{ github.run_id }}
         path: cypress-tests/cypress/screenshots/
         retention-days: 30
 
@@ -109,7 +111,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: cypress-videos
+        name: cypress-videos-${{ github.run_id }}
         path: cypress-tests/cypress/videos/
         retention-days: 30
 
@@ -117,7 +119,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: api-test-results
+        name: api-test-results-${{ github.run_id }}
         path: cypress-tests/results/
         retention-days: 30
 
@@ -131,7 +133,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: test-report
+        name: test-report-${{ github.run_id }}
         path: cypress-tests/cypress/reports/report.html
         retention-days: 30
 

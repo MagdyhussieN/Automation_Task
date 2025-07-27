@@ -76,9 +76,14 @@ jobs:
         timeout 60 bash -c 'until curl -f http://localhost:3000; do sleep 2; done'
         echo "Frontend is ready!"
 
-    - name: run Postman collection
+    - name: Create Postman collection directory
+      run: mkdir -p cypress-tests/postman
+
+    - name: Run Postman collection
+      working-directory: cypress-tests
       run: |
         newman run postman/qa-collection.json --reporters cli
+    
 
     - name: Run Cypress Tests
       working-directory: cypress-tests
