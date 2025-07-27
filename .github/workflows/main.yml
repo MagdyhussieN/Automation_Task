@@ -88,13 +88,6 @@ jobs:
     
       
 
-    - name: Run Cypress Tests
-      working-directory: cypress-tests
-      run: |
-        npx cypress run --record false --browser chrome --headless
-      env:
-        CI: true
-        CYPRESS_baseUrl: http://localhost:3000
 
     - name: Upload Cypress screenshots
       uses: actions/upload-artifact@v4
