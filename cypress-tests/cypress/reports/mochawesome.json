@@ -5,9 +5,9 @@
     "passes": 12,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-26T23:53:33.881Z",
-    "end": "2025-07-26T23:53:47.456Z",
-    "duration": 13575,
+    "start": "2025-07-27T09:01:47.430Z",
+    "end": "2025-07-27T09:02:00.399Z",
+    "duration": 12969,
     "testsRegistered": 12,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "06074051-92bf-4fe5-8c60-192e66578d34",
+      "uuid": "f3476581-2277-44b1-a3e7-9d4a8e4c3e45",
       "title": "",
       "fullFile": "cypress/e2e/login/login.cy.js",
       "file": "cypress/e2e/login/login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3c847a99-28d1-4d1c-aee6-b136caf2825e",
+          "uuid": "b37e2917-9ab3-462a-9776-11b304916d66",
           "title": "Login Page",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "493a11cd-1e58-44c8-85a1-30c112179315",
+              "uuid": "44e8f7cf-0396-4c62-9702-ebbe2d9bdfc3",
               "title": "Page Load",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "should load login page correctly",
                   "fullTitle": "Login Page Page Load should load login page correctly",
                   "timedOut": null,
-                  "duration": 885,
+                  "duration": 489,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": null,
                   "code": "loginPage.shouldBeOnLoginPage().shouldShowDemoCredentials().shouldHaveProperLabels().shouldRequireEmail().shouldRequirePassword().shouldHaveEmailType().shouldHavePasswordType();",
                   "err": {},
-                  "uuid": "28585121-86e1-425a-9e16-3951089de70a",
-                  "parentUUID": "493a11cd-1e58-44c8-85a1-30c112179315",
+                  "uuid": "1c31a0c2-f886-4bac-9485-d55640661a47",
+                  "parentUUID": "44e8f7cf-0396-4c62-9702-ebbe2d9bdfc3",
                   "isHook": false,
                   "skipped": false
                 },
@@ -65,7 +65,7 @@
                   "title": "should have proper form structure",
                   "fullTitle": "Login Page Page Load should have proper form structure",
                   "timedOut": null,
-                  "duration": 171,
+                  "duration": 146,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -74,27 +74,27 @@
                   "context": null,
                   "code": "loginPage.elements.loginForm().should('exist');\nloginPage.elements.emailInput().should('be.visible');\nloginPage.elements.passwordInput().should('be.visible');\nloginPage.elements.loginButton().should('be.visible');",
                   "err": {},
-                  "uuid": "a3c7f5ad-dc31-4185-adac-8116cdeb8814",
-                  "parentUUID": "493a11cd-1e58-44c8-85a1-30c112179315",
+                  "uuid": "e320f298-4b49-4daf-a890-b1c003de5d58",
+                  "parentUUID": "44e8f7cf-0396-4c62-9702-ebbe2d9bdfc3",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "28585121-86e1-425a-9e16-3951089de70a",
-                "a3c7f5ad-dc31-4185-adac-8116cdeb8814"
+                "1c31a0c2-f886-4bac-9485-d55640661a47",
+                "e320f298-4b49-4daf-a890-b1c003de5d58"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1056,
+              "duration": 635,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "fd687bc5-68c6-4788-9cd5-2f44453b3a9b",
+              "uuid": "d5c7c899-0442-4252-a66f-073e6085ded7",
               "title": "Valid Login",
               "fullFile": "",
               "file": "",
@@ -105,7 +105,7 @@
                   "title": "should login with valid credentials",
                   "fullTitle": "Login Page Valid Login should login with valid credentials",
                   "timedOut": null,
-                  "duration": 1139,
+                  "duration": 1093,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -114,8 +114,8 @@
                   "context": null,
                   "code": "loginPage.interceptLoginRequest().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).waitForLoginRequest().shouldBeLoggedIn().shouldNotShowError();",
                   "err": {},
-                  "uuid": "cad91606-ddca-4d4b-a6c7-e73c0d00e1d0",
-                  "parentUUID": "fd687bc5-68c6-4788-9cd5-2f44453b3a9b",
+                  "uuid": "01a1a9b4-52a1-4f43-a374-6cce98c3fe6d",
+                  "parentUUID": "d5c7c899-0442-4252-a66f-073e6085ded7",
                   "isHook": false,
                   "skipped": false
                 },
@@ -123,7 +123,7 @@
                   "title": "should redirect to dashboard after successful login",
                   "fullTitle": "Login Page Valid Login should redirect to dashboard after successful login",
                   "timedOut": null,
-                  "duration": 1036,
+                  "duration": 973,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -132,8 +132,8 @@
                   "context": null,
                   "code": "loginPage.login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Verify dashboard elements are visible\ncy.contains('h1', 'Todo Manager').should('be.visible');\ncy.contains('button', 'Logout').should('be.visible');\ncy.contains('button', 'Add New Todo').should('be.visible');",
                   "err": {},
-                  "uuid": "9e67334d-ffe8-4739-b6ea-949ba5cb6c21",
-                  "parentUUID": "fd687bc5-68c6-4788-9cd5-2f44453b3a9b",
+                  "uuid": "34791302-d4f7-445f-a583-35bb1eb0d86c",
+                  "parentUUID": "d5c7c899-0442-4252-a66f-073e6085ded7",
                   "isHook": false,
                   "skipped": false
                 },
@@ -141,7 +141,7 @@
                   "title": "should show welcome message with user name",
                   "fullTitle": "Login Page Valid Login should show welcome message with user name",
                   "timedOut": null,
-                  "duration": 1199,
+                  "duration": 968,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -150,28 +150,28 @@
                   "context": null,
                   "code": "loginPage.login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\ncy.get('[data-testid=\"user-welcome\"]').should('contain', _loginData.loginData.validUser.name);",
                   "err": {},
-                  "uuid": "eb259608-0450-46e6-a374-16de4acc9d39",
-                  "parentUUID": "fd687bc5-68c6-4788-9cd5-2f44453b3a9b",
+                  "uuid": "0fd5b2f2-535e-4c16-885e-b49810425451",
+                  "parentUUID": "d5c7c899-0442-4252-a66f-073e6085ded7",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "cad91606-ddca-4d4b-a6c7-e73c0d00e1d0",
-                "9e67334d-ffe8-4739-b6ea-949ba5cb6c21",
-                "eb259608-0450-46e6-a374-16de4acc9d39"
+                "01a1a9b4-52a1-4f43-a374-6cce98c3fe6d",
+                "34791302-d4f7-445f-a583-35bb1eb0d86c",
+                "0fd5b2f2-535e-4c16-885e-b49810425451"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3374,
+              "duration": 3034,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "61c62858-0194-45cb-8b94-a75f7f1bd2b8",
+              "uuid": "4ffc0bf1-4e1e-425f-b65d-3f67012eed5c",
               "title": "Invalid Login",
               "fullFile": "",
               "file": "",
@@ -182,7 +182,7 @@
                   "title": "should show error for Invalid email",
                   "fullTitle": "Login Page Invalid Login should show error for Invalid email",
                   "timedOut": null,
-                  "duration": 1150,
+                  "duration": 1050,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -191,26 +191,26 @@
                   "context": null,
                   "code": "loginPage.interceptLoginRequest().login(credential.email, credential.password);\ncy.contains('h1', 'Todo Manager').should('not.exist');\ncy.contains('button', 'Logout').should('not.exist');\ncy.contains('button', 'Add New Todo').should('not.exist');",
                   "err": {},
-                  "uuid": "dc4b6fe7-d1b5-45eb-9442-5f0dda0f05cf",
-                  "parentUUID": "61c62858-0194-45cb-8b94-a75f7f1bd2b8",
+                  "uuid": "efb7be98-c0b6-4ab9-835f-0c8a0fe5fb0c",
+                  "parentUUID": "4ffc0bf1-4e1e-425f-b65d-3f67012eed5c",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "dc4b6fe7-d1b5-45eb-9442-5f0dda0f05cf"
+                "efb7be98-c0b6-4ab9-835f-0c8a0fe5fb0c"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1150,
+              "duration": 1050,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "e1697b6a-e20e-4386-858b-f3eb7cdb64bc",
+              "uuid": "18974c91-e4e4-4aae-90a6-d75cf4cb96c9",
               "title": "Form Validation",
               "fullFile": "",
               "file": "",
@@ -221,7 +221,7 @@
                   "title": "should enable login button when form has data",
                   "fullTitle": "Login Page Form Validation should enable login button when form has data",
                   "timedOut": null,
-                  "duration": 933,
+                  "duration": 845,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -230,26 +230,8 @@
                   "context": null,
                   "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
                   "err": {},
-                  "uuid": "825bb7f6-865a-489c-b724-bd57940c1949",
-                  "parentUUID": "e1697b6a-e20e-4386-858b-f3eb7cdb64bc",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "should enable login button when form has data",
-                  "fullTitle": "Login Page Form Validation should enable login button when form has data",
-                  "timedOut": null,
-                  "duration": 924,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
-                  "err": {},
-                  "uuid": "e61a2183-6c8c-412d-94c5-1ccc284f08ec",
-                  "parentUUID": "e1697b6a-e20e-4386-858b-f3eb7cdb64bc",
+                  "uuid": "3759c317-3548-4e38-83af-f066a209ca14",
+                  "parentUUID": "18974c91-e4e4-4aae-90a6-d75cf4cb96c9",
                   "isHook": false,
                   "skipped": false
                 },
@@ -266,28 +248,46 @@
                   "context": null,
                   "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
                   "err": {},
-                  "uuid": "1b32e3c4-1e7a-430d-ae9b-afb50b3388b0",
-                  "parentUUID": "e1697b6a-e20e-4386-858b-f3eb7cdb64bc",
+                  "uuid": "9fc8366f-c67b-4b05-9337-ccf367a756f6",
+                  "parentUUID": "18974c91-e4e4-4aae-90a6-d75cf4cb96c9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should enable login button when form has data",
+                  "fullTitle": "Login Page Form Validation should enable login button when form has data",
+                  "timedOut": null,
+                  "duration": 1088,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
+                  "err": {},
+                  "uuid": "947a982b-fa1a-48ab-9c42-b0e9ef00ba31",
+                  "parentUUID": "18974c91-e4e4-4aae-90a6-d75cf4cb96c9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "825bb7f6-865a-489c-b724-bd57940c1949",
-                "e61a2183-6c8c-412d-94c5-1ccc284f08ec",
-                "1b32e3c4-1e7a-430d-ae9b-afb50b3388b0"
+                "3759c317-3548-4e38-83af-f066a209ca14",
+                "9fc8366f-c67b-4b05-9337-ccf367a756f6",
+                "947a982b-fa1a-48ab-9c42-b0e9ef00ba31"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2722,
+              "duration": 2798,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "fb8ffbf1-e574-436b-968a-e772431d3349",
+              "uuid": "31def65c-df6e-4f51-8ae4-658629bdf70a",
               "title": "User Experience",
               "fullFile": "",
               "file": "",
@@ -298,7 +298,7 @@
                   "title": "should allow form submission with Enter key",
                   "fullTitle": "Login Page User Experience should allow form submission with Enter key",
                   "timedOut": null,
-                  "duration": 974,
+                  "duration": 1129,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -307,26 +307,26 @@
                   "context": null,
                   "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).submitForm().shouldBeLoggedIn();",
                   "err": {},
-                  "uuid": "a364087b-d8e2-4383-821d-9245748589ce",
-                  "parentUUID": "fb8ffbf1-e574-436b-968a-e772431d3349",
+                  "uuid": "d48b934f-261f-4a73-9153-3006b763f2d9",
+                  "parentUUID": "31def65c-df6e-4f51-8ae4-658629bdf70a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "a364087b-d8e2-4383-821d-9245748589ce"
+                "d48b934f-261f-4a73-9153-3006b763f2d9"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 974,
+              "duration": 1129,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "837ded89-5183-4a97-8180-4b194c71cc85",
+              "uuid": "29bfff0e-b16e-4adc-bfa3-2db875cc22d1",
               "title": "Security",
               "fullFile": "",
               "file": "",
@@ -337,7 +337,7 @@
                   "title": "should not expose password in URL or page source",
                   "fullTitle": "Login Page Security should not expose password in URL or page source",
                   "timedOut": null,
-                  "duration": 696,
+                  "duration": 648,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -346,26 +346,26 @@
                   "context": null,
                   "code": "loginPage.typePassword('secretpassword').clickLogin();\ncy.url().should('not.contain', 'secretpassword');\ncy.get('body').should('not.contain', 'secretpassword');",
                   "err": {},
-                  "uuid": "8e8ccde4-3a95-4b7c-ad41-79ce47e878b7",
-                  "parentUUID": "837ded89-5183-4a97-8180-4b194c71cc85",
+                  "uuid": "a8e21a0f-799f-407b-aa77-c27b405432e2",
+                  "parentUUID": "29bfff0e-b16e-4adc-bfa3-2db875cc22d1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "8e8ccde4-3a95-4b7c-ad41-79ce47e878b7"
+                "a8e21a0f-799f-407b-aa77-c27b405432e2"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 696,
+              "duration": 648,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "4cb6d79a-941d-4917-ac29-e7552b933932",
+              "uuid": "3a608354-e7de-4dc3-baf3-7cf92f99aa19",
               "title": "Cross-browser Compatibility",
               "fullFile": "",
               "file": "",
@@ -376,7 +376,7 @@
                   "title": "should work with different viewport sizes",
                   "fullTitle": "Login Page Cross-browser Compatibility should work with different viewport sizes",
                   "timedOut": null,
-                  "duration": 2978,
+                  "duration": 3040,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -385,20 +385,20 @@
                   "context": null,
                   "code": "// Test mobile viewport\ncy.viewport(375, 667);\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Test tablet viewport\ncy.viewport(768, 1024);\nloginPage.visit();\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Test desktop viewport\ncy.viewport(1280, 720);\nloginPage.visit();\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();",
                   "err": {},
-                  "uuid": "0776888e-a842-4b55-a7c7-313d532d9305",
-                  "parentUUID": "4cb6d79a-941d-4917-ac29-e7552b933932",
+                  "uuid": "566541f5-f58e-451e-ad74-f5307ff2e7a8",
+                  "parentUUID": "3a608354-e7de-4dc3-baf3-7cf92f99aa19",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0776888e-a842-4b55-a7c7-313d532d9305"
+                "566541f5-f58e-451e-ad74-f5307ff2e7a8"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2978,
+              "duration": 3040,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000

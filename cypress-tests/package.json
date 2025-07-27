@@ -10,11 +10,11 @@
         "cypress:open:todo": "cypress open --spec 'cypress/e2e/todo/Todo.cy.js'",
         "test:login": "cypress run --spec 'cypress/e2e/login/login.cy.js'",
         "test:todo": "cypress run --spec 'cypress/e2e/todo/Todo.cy.js'",
-        "test:all": "cypress run",
         "test:headed": "cypress run --headed",
         "test:chrome": "cypress run --browser chrome",
         "test:firefox": "cypress run --browser firefox",
-        "test:report": "npm run test:all && mochawesome-merge cypress/reports/*.json > cypress/reports/output.json && marge cypress/reports/output.json --reportDir cypress/reports --reportFilename report.html"
+        "test:all": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true",
+        "test:report": "rm -f cypress/reports/*.json && npm run test:all && ls cypress/reports/*.json && npx mochawesome-merge cypress/reports/*.json > cypress/reports/output.json && npx marge cypress/reports/output.json --reportDir cypress/reports --reportFilename report.html"
     },
     "devDependencies": {
         "cypress": "^13.6.0",
