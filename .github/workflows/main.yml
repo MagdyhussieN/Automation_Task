@@ -45,8 +45,8 @@ jobs:
     - name: Install Newman for API testing
       run: npm install -g newman
 
-    - name: Create Postman collection directory
-      run: mkdir -p cypress-tests/postman
+    # - name: Create Postman collection directory
+    #   run: mkdir -p cypress-tests/postman
 
 
 
