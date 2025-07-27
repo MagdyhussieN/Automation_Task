@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18.x]
     
     steps:
     - name: Checkout code
@@ -90,15 +90,6 @@ jobs:
         CI: true
         CYPRESS_baseUrl: http://localhost:3000
 
-    # - name: Run Postman API Tests
-    #   working-directory: cypress-tests
-    #   run: |
-    #     newman run postman/qa-collection.json \
-    #       -e postman/qa-environment.json \
-    #       --reporters cli,junit \
-    #       --reporter-junit-export results/api-test-results.xml \
-    #       --bail
-
     - name: Upload Cypress screenshots
       uses: actions/upload-artifact@v4
       if: failure()
@@ -107,12 +98,25 @@ jobs:
         path: cypress-tests/cypress/screenshots/
         retention-days: 30
 
+
+    - name: Generate timestamp
+      id: timestamp
+      run: echo "ts=$(date +%s)" >> "$GITHUB_OUTPUT"
+
     - name: Upload Cypress videos
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: cypress-videos-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+        name: cypress-videos-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ steps.timestamp.outputs.ts }}
         path: cypress-tests/cypress/videos/
+        retention-days: 30
+
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-report-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ steps.timestamp.outputs.ts }}
+        path: cypress-tests/cypress/reports/report.html
         retention-days: 30
 
     - name: Upload API test results
@@ -128,14 +132,6 @@ jobs:
       run: |
         cd cypress-tests
         npm run test:report
-  
-    - name: Upload Test Report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: test-report-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
-        path: cypress-tests/cypress/reports/report.html
-        retention-days: 30
 
     - name: Stop Backend Server
       if: always()
