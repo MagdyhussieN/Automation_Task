@@ -1,12 +1,5 @@
 [
   {
-    "title": "Test Todo 2",
-    "description": "",
-    "completed": false,
-    "id": 1,
-    "createdAt": "2025-07-26T19:36:40.850Z"
-  },
-  {
     "title": "qweqwewe",
     "description": "qweqwdadasdzzczxczx",
     "completed": false,
@@ -40,5 +33,12 @@
     "completed": false,
     "id": 6,
     "createdAt": "2025-07-26T20:51:32.227Z"
+  },
+  {
+    "title": "New Todo",
+    "description": "Todo description",
+    "completed": false,
+    "id": 7,
+    "createdAt": "2025-07-27T00:51:10.042Z"
   }
 ]
