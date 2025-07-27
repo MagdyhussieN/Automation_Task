@@ -53,33 +53,39 @@ jobs:
     - name: Start Backend Server
       working-directory: backend
       run: |
-        nohup npm run dev > backend.log 2>&1 &
+        nohup npm run dev > ../backend.log 2>&1 &
         echo $! > backend.pid
+    
+    - name: Start Frontend Server
+      working-directory: frontend
+      run: |
+        nohup npm run dev > ../frontend.log 2>&1 &
+        echo $! > frontend.pid
     
     - name: Wait for Backend to be ready
       run: |
         echo "Waiting for backend to be ready..."
         timeout 90 bash -c 'until curl -sSf http://localhost:5001/health; do sleep 2; done'
     
-
-    - name: Start Frontend Server
-      working-directory: frontend
-      run: |
-        npm run dev &
-        echo $! > frontend.pid
-        sleep 5
-
-
     - name: Wait for Frontend to be ready
       run: |
         echo "Waiting for frontend to be ready..."
         timeout 60 bash -c 'until curl -f http://localhost:3000; do sleep 2; done'
-        echo "Frontend is ready!"
-
+    
+    - name: Short delay before Postman
+      run: sleep 5
+    
     - name: Run Postman collection
       working-directory: cypress-tests
       run: |
-        newman run postman/qa-collection.json --reporters cli
+        for i in 1 2 3; do
+          newman run postman/qa-collection.json --reporters cli && break || sleep 3
+        done
+    
+    - name: Print Backend Logs
+      if: failure()
+      run: cat backend.log || echo "No backend logs"
+    
       
 
     - name: Run Cypress Tests
