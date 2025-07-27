@@ -1,0 +1,23 @@
+{
+    "reporters": [
+        "cli",
+        "junit",
+        "html"
+    ],
+    "reporter": {
+        "junit": {
+            "export": "results/api-test-results.xml"
+        },
+        "html": {
+            "export": "results/api-test-report.html"
+        }
+    },
+    "bail": {
+        "enabled": true,
+        "threshold": 1
+    },
+    "timeout": {
+        "request": 10000,
+        "response": 10000
+    }
+}

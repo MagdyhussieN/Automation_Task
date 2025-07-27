@@ -1,0 +1,336 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-26T23:56:31.535Z",
+    "end": "2025-07-26T23:57:02.112Z",
+    "duration": 30577,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2756879c-be45-4a9b-8c6e-527a6e226c30",
+      "title": "",
+      "fullFile": "cypress/e2e/todo/Todo.cy.js",
+      "file": "cypress/e2e/todo/Todo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "05dd3d76-c12e-4bc4-8c39-c06ff16d1c49",
+          "title": "Todo Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6fefc072-0ddf-4eea-a14b-d88db50d076a",
+              "title": "Dashboard Load",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should load dashboard correctly",
+                  "fullTitle": "Todo Management Dashboard Load should load dashboard correctly",
+                  "timedOut": null,
+                  "duration": 1056,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "todoPage.shouldBeOnDashboard();",
+                  "err": {},
+                  "uuid": "32fa0bba-1821-4915-b897-d64935c71e29",
+                  "parentUUID": "6fefc072-0ddf-4eea-a14b-d88db50d076a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show user welcome message",
+                  "fullTitle": "Todo Management Dashboard Load should show user welcome message",
+                  "timedOut": null,
+                  "duration": 796,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "todoPage.elements.userWelcome().should('contain', 'Demo User');",
+                  "err": {},
+                  "uuid": "685305c9-ac11-4cc0-8fef-9c11fc7666d0",
+                  "parentUUID": "6fefc072-0ddf-4eea-a14b-d88db50d076a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should have proper navigation elements",
+                  "fullTitle": "Todo Management Dashboard Load should have proper navigation elements",
+                  "timedOut": null,
+                  "duration": 862,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "todoPage.elements.addTodoButton().should('be.visible');\ntodoPage.elements.logoutButton().should('be.visible');",
+                  "err": {},
+                  "uuid": "1ba0cc6c-dca1-4150-b7a3-6a02bacdffd7",
+                  "parentUUID": "6fefc072-0ddf-4eea-a14b-d88db50d076a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "32fa0bba-1821-4915-b897-d64935c71e29",
+                "685305c9-ac11-4cc0-8fef-9c11fc7666d0",
+                "1ba0cc6c-dca1-4150-b7a3-6a02bacdffd7"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2714,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5e7adbe6-2886-42c1-8cc0-1dd7f9d37bfd",
+              "title": "Create Todo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should create a new todo with title and description",
+                  "fullTitle": "Todo Management Create Todo should create a new todo with title and description",
+                  "timedOut": null,
+                  "duration": 4159,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const todo = _todoData.todoData.newTodos[0];\ntodoPage.interceptTodoRequests().createTodo(todo.title, todo.description).waitForCreateTodo().shouldShowTodo(todo.title).shouldShowTodoDescription(todo.title, todo.description);",
+                  "err": {},
+                  "uuid": "0903a654-d61f-4d25-b987-b2722d711a6b",
+                  "parentUUID": "5e7adbe6-2886-42c1-8cc0-1dd7f9d37bfd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should create a todo with only title",
+                  "fullTitle": "Todo Management Create Todo should create a todo with only title",
+                  "timedOut": null,
+                  "duration": 3563,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const todo = _todoData.todoData.newTodos[1];\ntodoPage.createTodo(todo.title).shouldShowTodo(todo.title);",
+                  "err": {},
+                  "uuid": "5490fb37-669e-49f8-9309-d0edbf814e92",
+                  "parentUUID": "5e7adbe6-2886-42c1-8cc0-1dd7f9d37bfd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should cancel todo creation",
+                  "fullTitle": "Todo Management Create Todo should cancel todo creation",
+                  "timedOut": null,
+                  "duration": 3869,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const todo = _todoData.todoData.newTodos[1];\ntodoPage.createTodo(todo.title, todo.description).cancelTodo();",
+                  "err": {},
+                  "uuid": "0e971ae2-eddf-4f9a-b6a2-60c592b4bc8b",
+                  "parentUUID": "5e7adbe6-2886-42c1-8cc0-1dd7f9d37bfd",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0903a654-d61f-4d25-b987-b2722d711a6b",
+                "5490fb37-669e-49f8-9309-d0edbf814e92",
+                "0e971ae2-eddf-4f9a-b6a2-60c592b4bc8b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 11591,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "2748aadf-bcf4-41ff-a4ef-c9e919894cca",
+              "title": "Edit Todo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should edit todo title and description",
+                  "fullTitle": "Todo Management Edit Todo should edit todo title and description",
+                  "timedOut": null,
+                  "duration": 5300,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const scenario = _todoData.todoData.updateScenarios[0];\ntodoPage.interceptTodoRequests().editTodo(scenario.original.title, scenario.updated.title, scenario.updated.description).waitForUpdateTodo().shouldShowTodo(scenario.updated.title).shouldShowTodoDescription(scenario.updated.title, scenario.updated.description);",
+                  "err": {},
+                  "uuid": "43699e63-1475-4ef8-870d-1e55d5b17591",
+                  "parentUUID": "2748aadf-bcf4-41ff-a4ef-c9e919894cca",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should cancel edit operation",
+                  "fullTitle": "Todo Management Edit Todo should cancel edit operation",
+                  "timedOut": null,
+                  "duration": 6054,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "todoPage.clickEditTodo('Original Todo').editTodoTitle('This should be cancelled').editTodoDescription('This should also be cancelled').cancelEdit().shouldShowTodo('Original Todo').shouldShowTodoDescription('Original Todo', 'Original description');",
+                  "err": {},
+                  "uuid": "71429ea3-b650-4a9a-9533-5a706ceb5689",
+                  "parentUUID": "2748aadf-bcf4-41ff-a4ef-c9e919894cca",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "43699e63-1475-4ef8-870d-1e55d5b17591",
+                "71429ea3-b650-4a9a-9533-5a706ceb5689"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 11354,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "34569de3-c4cd-4cff-adb6-37fc3543afc2",
+              "title": "Delete Todo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should delete existing todo",
+                  "fullTitle": "Todo Management Delete Todo should delete existing todo",
+                  "timedOut": null,
+                  "duration": 4092,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "todoPage.interceptTodoRequests().deleteTodo('Todo to Delete').waitForDeleteTodo().shouldNotShowTodo('Todo to Delete').shouldNotShowError();",
+                  "err": {},
+                  "uuid": "5ff11966-fb6a-477c-af86-4c44a98f06a6",
+                  "parentUUID": "34569de3-c4cd-4cff-adb6-37fc3543afc2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5ff11966-fb6a-477c-af86-4c44a98f06a6"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4092,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

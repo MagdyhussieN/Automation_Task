@@ -1,0 +1,453 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 12,
+    "passes": 12,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-26T23:56:16.344Z",
+    "end": "2025-07-26T23:56:28.935Z",
+    "duration": 12591,
+    "testsRegistered": 12,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0892210c-d213-43bc-bddb-16c54e20cae6",
+      "title": "",
+      "fullFile": "cypress/e2e/login/login.cy.js",
+      "file": "cypress/e2e/login/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "02393239-d0e1-456e-b4a1-9012f34a8cb2",
+          "title": "Login Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "04fa4d06-fdf3-4bd9-a2b5-6a930b2c1392",
+              "title": "Page Load",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should load login page correctly",
+                  "fullTitle": "Login Page Page Load should load login page correctly",
+                  "timedOut": null,
+                  "duration": 476,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.shouldBeOnLoginPage().shouldShowDemoCredentials().shouldHaveProperLabels().shouldRequireEmail().shouldRequirePassword().shouldHaveEmailType().shouldHavePasswordType();",
+                  "err": {},
+                  "uuid": "8f81fe64-47cc-4805-b6a4-286e2f7654d7",
+                  "parentUUID": "04fa4d06-fdf3-4bd9-a2b5-6a930b2c1392",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should have proper form structure",
+                  "fullTitle": "Login Page Page Load should have proper form structure",
+                  "timedOut": null,
+                  "duration": 136,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.elements.loginForm().should('exist');\nloginPage.elements.emailInput().should('be.visible');\nloginPage.elements.passwordInput().should('be.visible');\nloginPage.elements.loginButton().should('be.visible');",
+                  "err": {},
+                  "uuid": "64c53e07-dc2c-4e11-a1b0-fed0d2013165",
+                  "parentUUID": "04fa4d06-fdf3-4bd9-a2b5-6a930b2c1392",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8f81fe64-47cc-4805-b6a4-286e2f7654d7",
+                "64c53e07-dc2c-4e11-a1b0-fed0d2013165"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 612,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4f321acd-b516-45e0-97f9-3c09585b1e91",
+              "title": "Valid Login",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should login with valid credentials",
+                  "fullTitle": "Login Page Valid Login should login with valid credentials",
+                  "timedOut": null,
+                  "duration": 1076,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.interceptLoginRequest().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).waitForLoginRequest().shouldBeLoggedIn().shouldNotShowError();",
+                  "err": {},
+                  "uuid": "7238f244-bee4-4ec1-8464-c345671d1e81",
+                  "parentUUID": "4f321acd-b516-45e0-97f9-3c09585b1e91",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should redirect to dashboard after successful login",
+                  "fullTitle": "Login Page Valid Login should redirect to dashboard after successful login",
+                  "timedOut": null,
+                  "duration": 991,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Verify dashboard elements are visible\ncy.contains('h1', 'Todo Manager').should('be.visible');\ncy.contains('button', 'Logout').should('be.visible');\ncy.contains('button', 'Add New Todo').should('be.visible');",
+                  "err": {},
+                  "uuid": "1d641a3a-a5b5-4737-9638-ad69cf249b17",
+                  "parentUUID": "4f321acd-b516-45e0-97f9-3c09585b1e91",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show welcome message with user name",
+                  "fullTitle": "Login Page Valid Login should show welcome message with user name",
+                  "timedOut": null,
+                  "duration": 1096,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\ncy.get('[data-testid=\"user-welcome\"]').should('contain', _loginData.loginData.validUser.name);",
+                  "err": {},
+                  "uuid": "baae84c3-989f-40bf-9502-d8fe6a023595",
+                  "parentUUID": "4f321acd-b516-45e0-97f9-3c09585b1e91",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7238f244-bee4-4ec1-8464-c345671d1e81",
+                "1d641a3a-a5b5-4737-9638-ad69cf249b17",
+                "baae84c3-989f-40bf-9502-d8fe6a023595"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3163,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "77cce0b8-1c5d-4d99-bb6d-8cd12fff679f",
+              "title": "Invalid Login",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should show error for Invalid email",
+                  "fullTitle": "Login Page Invalid Login should show error for Invalid email",
+                  "timedOut": null,
+                  "duration": 1128,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.interceptLoginRequest().login(credential.email, credential.password);\ncy.contains('h1', 'Todo Manager').should('not.exist');\ncy.contains('button', 'Logout').should('not.exist');\ncy.contains('button', 'Add New Todo').should('not.exist');",
+                  "err": {},
+                  "uuid": "9322bad1-a154-4acf-b5f5-bf207b0e38f1",
+                  "parentUUID": "77cce0b8-1c5d-4d99-bb6d-8cd12fff679f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9322bad1-a154-4acf-b5f5-bf207b0e38f1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1128,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a73d85cc-431f-4042-a165-326010b24704",
+              "title": "Form Validation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should enable login button when form has data",
+                  "fullTitle": "Login Page Form Validation should enable login button when form has data",
+                  "timedOut": null,
+                  "duration": 845,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
+                  "err": {},
+                  "uuid": "57b1308b-4a1f-4b20-810e-6744cdf81f61",
+                  "parentUUID": "a73d85cc-431f-4042-a165-326010b24704",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should enable login button when form has data",
+                  "fullTitle": "Login Page Form Validation should enable login button when form has data",
+                  "timedOut": null,
+                  "duration": 845,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
+                  "err": {},
+                  "uuid": "5805dced-9f90-41e3-ab6e-5ebc7180637f",
+                  "parentUUID": "a73d85cc-431f-4042-a165-326010b24704",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should enable login button when form has data",
+                  "fullTitle": "Login Page Form Validation should enable login button when form has data",
+                  "timedOut": null,
+                  "duration": 870,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).shouldHaveEnabledLoginButton();",
+                  "err": {},
+                  "uuid": "5b187d2d-cf0e-4cb7-af02-16f098e8b60a",
+                  "parentUUID": "a73d85cc-431f-4042-a165-326010b24704",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "57b1308b-4a1f-4b20-810e-6744cdf81f61",
+                "5805dced-9f90-41e3-ab6e-5ebc7180637f",
+                "5b187d2d-cf0e-4cb7-af02-16f098e8b60a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2560,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f6eb6b56-ba79-4218-b410-2d3cf21d4ebb",
+              "title": "User Experience",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow form submission with Enter key",
+                  "fullTitle": "Login Page User Experience should allow form submission with Enter key",
+                  "timedOut": null,
+                  "duration": 956,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typeEmail(_loginData.loginData.validUser.email).typePassword(_loginData.loginData.validUser.password).submitForm().shouldBeLoggedIn();",
+                  "err": {},
+                  "uuid": "b7606721-1b6d-44f9-93aa-f290e1051e48",
+                  "parentUUID": "f6eb6b56-ba79-4218-b410-2d3cf21d4ebb",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b7606721-1b6d-44f9-93aa-f290e1051e48"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 956,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "8d0cf569-6680-47c7-a54b-e1ff5cc538ae",
+              "title": "Security",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should not expose password in URL or page source",
+                  "fullTitle": "Login Page Security should not expose password in URL or page source",
+                  "timedOut": null,
+                  "duration": 611,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "loginPage.typePassword('secretpassword').clickLogin();\ncy.url().should('not.contain', 'secretpassword');\ncy.get('body').should('not.contain', 'secretpassword');",
+                  "err": {},
+                  "uuid": "a943cf6d-1047-490d-a456-7c419cecc985",
+                  "parentUUID": "8d0cf569-6680-47c7-a54b-e1ff5cc538ae",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a943cf6d-1047-490d-a456-7c419cecc985"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 611,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "016ca53f-c0c5-4564-8834-1c28c83b466b",
+              "title": "Cross-browser Compatibility",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should work with different viewport sizes",
+                  "fullTitle": "Login Page Cross-browser Compatibility should work with different viewport sizes",
+                  "timedOut": null,
+                  "duration": 3007,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Test mobile viewport\ncy.viewport(375, 667);\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Test tablet viewport\ncy.viewport(768, 1024);\nloginPage.visit();\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();\n// Test desktop viewport\ncy.viewport(1280, 720);\nloginPage.visit();\nloginPage.shouldBeOnLoginPage().login(_loginData.loginData.validUser.email, _loginData.loginData.validUser.password).shouldBeLoggedIn();",
+                  "err": {},
+                  "uuid": "a695cb91-086d-4392-ba8b-9a6d836c058c",
+                  "parentUUID": "016ca53f-c0c5-4564-8834-1c28c83b466b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a695cb91-086d-4392-ba8b-9a6d836c058c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3007,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

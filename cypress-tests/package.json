@@ -1,0 +1,33 @@
+{
+    "name": "todo-manager-cypress-tests",
+    "version": "1.0.0",
+    "description": "Cypress automation tests for Todo Manager application",
+    "scripts": {
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run",
+        "cypress:run:all": "cypress run --spec 'cypress/e2e/**/*.cy.js'",
+        "cypress:open:login": "cypress open --spec 'cypress/e2e/login/login.cy.js'",
+        "cypress:open:todo": "cypress open --spec 'cypress/e2e/todo/Todo.cy.js'",
+        "test:login": "cypress run --spec 'cypress/e2e/login/login.cy.js'",
+        "test:todo": "cypress run --spec 'cypress/e2e/todo/Todo.cy.js'",
+        "test:all": "cypress run",
+        "test:headed": "cypress run --headed",
+        "test:chrome": "cypress run --browser chrome",
+        "test:firefox": "cypress run --browser firefox",
+        "test:report": "npm run test:all && mochawesome-merge cypress/reports/*.json > cypress/reports/output.json && marge cypress/reports/output.json --reportDir cypress/reports --reportFilename report.html"
+    },
+    "devDependencies": {
+        "cypress": "^13.6.0",
+        "mochawesome": "^7.1.3",
+        "mochawesome-merge": "^4.4.1",
+        "mochawesome-report-generator": "^6.2.0"
+    },
+    "keywords": [
+        "cypress",
+        "automation",
+        "testing",
+        "todo-manager"
+    ],
+    "author": "",
+    "license": "MIT"
+}
